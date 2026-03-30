@@ -13,6 +13,12 @@ export default function SignupForm() {
     setIsLoading(true);
     setError(null);
 
+    if (!supabase) {
+      setError("Please configure Supabase environment variables to enable registration.");
+      setIsLoading(false);
+      return;
+    }
+
     const formData = new FormData(e.currentTarget as HTMLFormElement);
     const firstName = formData.get("firstName") as string;
     const lastName = formData.get("lastName") as string;
@@ -43,6 +49,10 @@ export default function SignupForm() {
   };
 
   const signInWithGoogle = async () => {
+    if (!supabase) {
+      setError("Supabase is not configured.");
+      return;
+    }
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {

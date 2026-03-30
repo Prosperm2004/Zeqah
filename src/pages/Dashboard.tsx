@@ -14,6 +14,11 @@ export default function Dashboard() {
 
   async function getProfile() {
     try {
+      if (!supabase) {
+        console.warn("Supabase is not configured. Redirecting to signin.");
+        navigate("/signin");
+        return;
+      }
       const { data: { user } } = await supabase.auth.getUser();
 
       if (!user) {
@@ -40,7 +45,9 @@ export default function Dashboard() {
   }
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
+    if (supabase) {
+      await supabase.auth.signOut();
+    }
     navigate("/");
   };
 
