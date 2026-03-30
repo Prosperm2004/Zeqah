@@ -41,11 +41,11 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <div 
               key={i} 
-              className={`p-10 flex flex-col gap-8 ${
+              className={`p-10 flex flex-col gap-8 group cursor-pointer hover:bg-white/5 transition-all duration-300 ${
                 i !== steps.length - 1 ? "border-b lg:border-b-0 lg:border-r border-border-custom" : ""
               }`}
             >
-              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-accent/10 group-hover:bg-accent/20 transition-colors duration-300 flex items-center justify-center">
                 <step.icon className="w-6 h-6 text-accent" />
               </div>
               <div className="space-y-4">

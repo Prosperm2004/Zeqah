@@ -31,11 +31,11 @@ export default function Features() {
         {features.map((feature, i) => (
           <div 
             key={i} 
-            className={`p-10 md:p-12 flex flex-col gap-6 ${
+            className={`p-10 md:p-12 flex flex-col gap-6 cursor-pointer hover:bg-white/5 transition-all duration-300 group ${
               i !== features.length - 1 ? "border-b lg:border-b-0 lg:border-r border-border-custom" : ""
             }`}
           >
-            <div className="w-10 h-10 rounded-sm bg-gradient-to-br from-[#232323] to-black flex items-center justify-center">
+            <div className="w-10 h-10 rounded-sm bg-gradient-to-br from-[#232323] to-black group-hover:from-accent/20 group-hover:to-accent/5 transition-colors duration-300 flex items-center justify-center">
               <feature.icon className="w-6 h-6 text-accent" />
             </div>
             <h3 className="text-xl font-display font-medium text-white tracking-[-0.01em] leading-[1.2]">

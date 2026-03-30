@@ -17,9 +17,9 @@ export default function SolutionSection() {
           </div>
         </div>
         <div className="flex-1 p-10">
-          <div className="aspect-square w-full max-w-md mx-auto bg-surface border border-border-custom rounded-sm relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute inset-10 border border-dashed border-accent/30 rounded-sm flex items-center justify-center">
+          <div className="aspect-square w-full max-w-md mx-auto bg-surface border border-border-custom rounded-xl relative overflow-hidden group cursor-pointer transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_30px_rgba(191,245,73,0.1)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-10 border border-dashed border-accent/30 rounded-lg flex items-center justify-center">
               <div className="text-center p-6">
                 <div className="w-16 h-16 bg-accent text-background rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">

@@ -3,36 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Ticker from "./components/Ticker";
-import VideoSection from "./components/VideoSection";
-import ProblemSection from "./components/ProblemSection";
-import SolutionSection from "./components/SolutionSection";
-import Features from "./components/Features";
-import HowItWorks from "./components/HowItWorks";
-import Testimonials from "./components/Testimonials";
-import FAQ from "./components/FAQ";
-import FinalCTA from "./components/FinalCTA";
-import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background selection:bg-accent selection:text-background">
-      <Navbar />
-      <main>
-        <Hero />
-        <Ticker />
-        <VideoSection />
-        <ProblemSection />
-        <SolutionSection />
-        <Features />
-        <HowItWorks />
-        <Testimonials />
-        <FAQ />
-        <FinalCTA />
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
   );
 }

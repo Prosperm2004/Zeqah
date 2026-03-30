@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import ShimmerText from "@/components/ui/shimmer-text";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   const containerVariants = {
@@ -28,14 +30,14 @@ export default function Hero() {
   return (
     <section className="pt-[74px] flex flex-col md:flex-row w-full min-h-[800px] px-5 md:px-13">
       <div className="flex-1 flex flex-col justify-center p-10 md:p-15 border-l border-border-custom max-w-[668px]">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5, ease: [0.12, 0.23, 0.17, 0.99] }}
-          className="inline-flex items-center gap-2 px-2.5 py-1.5 border border-border-custom rounded-sm mb-10 w-fit"
+          className="inline-flex items-center gap-2 px-3 py-1.5 border border-border-custom/50 bg-white/5 backdrop-blur-sm rounded-full mb-10 w-fit shadow-[0_0_10px_rgba(255,255,255,0.05)]"
         >
-          <div className="w-1 h-1 bg-accent" />
-          <span className="text-[10px] font-mono tracking-wider text-white uppercase">NOW LIVE IN BETA</span>
+          <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse z-10" />
+          <span className="text-[10px] font-mono tracking-wider text-white uppercase font-medium">NOW LIVE IN BETA</span>
         </motion.div>
 
         <motion.div
@@ -44,17 +46,25 @@ export default function Hero() {
           animate="visible"
           className="space-y-2 mb-8"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-normal leading-[1.0] tracking-[-0.01em] text-white">
-            <motion.span variants={itemVariants} className="inline-block mr-4">Stop guessing</motion.span>
-            <motion.span variants={itemVariants} className="inline-block">your future.</motion.span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-normal leading-[0.8] tracking-[-0.01em] text-white">
+            <motion.span variants={itemVariants} className="inline-block mr-4">
+              <ShimmerText>Stop guessing</ShimmerText>
+            </motion.span>
+            <motion.span variants={itemVariants} className="inline-block">
+              <ShimmerText>your future.</ShimmerText>
+            </motion.span>
           </h1>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-normal leading-[1.0] tracking-[-0.01em] text-secondary-text">
-            <motion.span variants={itemVariants} className="inline-block mr-4">Start following</motion.span>
-            <motion.span variants={itemVariants} className="inline-block">a clear path.</motion.span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-normal leading-[0.8] tracking-[-0.01em] text-secondary-text">
+            <motion.span variants={itemVariants} className="inline-block mr-4">
+              <ShimmerText variant="secondary">Start following</ShimmerText>
+            </motion.span>
+            <motion.span variants={itemVariants} className="inline-block">
+              <ShimmerText variant="secondary">a clear path.</ShimmerText>
+            </motion.span>
           </h1>
         </motion.div>
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ delay: 0.4, duration: 1 }}
@@ -68,27 +78,27 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1.5, ease: [0.12, 0.23, 0.17, 0.99] }}
         >
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 px-6 py-4 bg-accent text-background font-medium rounded-sm hover:opacity-90 transition-opacity"
+          <Link
+            to="/signup"
+            className="inline-flex items-center gap-2 px-6 py-4 bg-accent text-background font-medium rounded-sm hover:opacity-100 hover:shadow-[0_0_25px_rgba(191,245,73,0.5)] transition-all duration-300 cursor-pointer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:ring-accent focus-visible:outline-none"
           >
             Get Started Free
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </motion.div>
       </div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 2, ease: [0.12, 0.23, 0.17, 0.99] }}
         className="flex-1 relative min-h-[400px] md:min-h-full overflow-hidden"
       >
-        <img 
-          src="https://framerusercontent.com/images/tOSxMrVYGDi3hlwbxeZ7gVRjJxY.webp?width=1336&height=1642" 
-          alt="Hero" 
+        <img
+          src="https://framerusercontent.com/images/tOSxMrVYGDi3hlwbxeZ7gVRjJxY.webp?width=1336&height=1642"
+          alt="Hero"
           className="absolute inset-0 w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />

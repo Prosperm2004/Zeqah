@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 export default function FinalCTA() {
   return (
@@ -8,15 +9,15 @@ export default function FinalCTA() {
           Stop feeling lost.<br />
           Start moving forward.
         </h2>
-        <a 
-          href="#" 
+        <Link 
+          to="/signup" 
           className="inline-flex items-center gap-2 px-8 py-5 bg-background text-white font-medium rounded-sm hover:opacity-90 transition-opacity text-lg"
         >
           Start Your Journey
           <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
-        </a>
+        </Link>
       </div>
     </section>
   );

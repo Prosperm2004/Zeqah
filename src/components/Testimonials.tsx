@@ -39,7 +39,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div 
               key={i} 
-              className={`p-10 md:p-15 flex flex-col justify-between gap-10 ${
+              className={`p-10 md:p-15 flex flex-col justify-between gap-10 group cursor-pointer hover:bg-white/5 transition-all duration-300 ${
                 i !== testimonials.length - 1 ? "border-b md:border-b-0 md:border-r border-border-custom" : ""
               }`}
             >
@@ -50,7 +50,7 @@ export default function Testimonials() {
                 <img 
                   src={t.avatar} 
                   alt={t.author} 
-                  className="w-11 h-11 rounded-full bg-white grayscale hover:grayscale-0 transition-all duration-300"
+                  className="w-11 h-11 rounded-full bg-white grayscale group-hover:grayscale-0 transition-all duration-300"
                   referrerPolicy="no-referrer"
                 />
                 <div>
